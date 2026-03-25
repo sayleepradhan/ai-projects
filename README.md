@@ -7,6 +7,6 @@ A collection of end-to-end AI/ML projects covering RAG systems, fine-tuning, age
 | # | Project | Description | Tech Stack | Status |
 |---|---------|-------------|------------|--------|
 | 1 | [RAG Pipeline from Scratch](./rag-pipeline-from-scratch/) | A minimal RAG pipeline built without frameworks to understand the fundamentals: chunking, embedding, retrieval, and generation. | Python, NumPy, Anthropic API | ✅ Complete |
-| 2 | [Customer Support Q&A Chatbot](./customer-support-chatbot/) | A domain-specific RAG chatbot that answers customer support queries using a curated knowledge base with a Streamlit chat UI. | LangChain, FAISS, sentence-transformers, Claude, Streamlit | 🔨 In Progress |
+| 2 | [Customer Support Q&A Chatbot](./customer-support-chatbot/) | A domain-specific RAG chatbot that answers customer support queries using a curated knowledge base with a Streamlit chat UI. | LangChain, FAISS, sentence-transformers, Claude, Streamlit | ✅ Complete |
 
 **Author:** [Saylee Pradhan](https://www.linkedin.com/in/sayleepradhan/) · [Blog](https://sayleepradhan.dev) · [GitHub](https://github.com/sayleepradhan)
