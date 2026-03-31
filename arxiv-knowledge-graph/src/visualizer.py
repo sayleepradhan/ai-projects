@@ -35,7 +35,7 @@ def create_pyvis_graph(
 
     # Scale node size by degree
     degrees = dict(G.degree())
-    max_deg = max(degrees.values()) if degrees else 1
+    max_deg = max(degrees.values(), default=1) or 1
 
 
     for node in G.nodes():
