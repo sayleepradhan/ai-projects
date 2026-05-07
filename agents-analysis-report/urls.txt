@@ -1,0 +1,5 @@
+# Sample URLs for document ingestion
+https://www.artificialintelligence-news.com/2023/05/11/eu-committees-green-light-ai-act/
+https://www.artificialintelligence-news.com/2023/05/16/openai-ceo-ai-regulation-is-essential/
+https://www.artificialintelligence-news.com/2023/05/02/ai-godfather-warns-dangers-and-quits-google/
+https://www.artificialintelligence-news.com/2023/04/26/ftc-chairwoman-no-ai-exemption-to-existing-laws/
