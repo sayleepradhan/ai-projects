@@ -1,5 +1,5 @@
-# Sample URLs for document ingestion
-https://www.artificialintelligence-news.com/2023/05/11/eu-committees-green-light-ai-act/
-https://www.artificialintelligence-news.com/2023/05/16/openai-ceo-ai-regulation-is-essential/
-https://www.artificialintelligence-news.com/2023/05/02/ai-godfather-warns-dangers-and-quits-google/
-https://www.artificialintelligence-news.com/2023/04/26/ftc-chairwoman-no-ai-exemption-to-existing-laws/
+https://www150.statcan.gc.ca/n1/daily-quotidien/260420/dq260420b-eng.htm
+https://www150.statcan.gc.ca/n1/pub/46-28-0001/2025001/article/00005-eng.htm
+https://www150.statcan.gc.ca/n1/daily-quotidien/251202/dq251202b-eng.htm
+https://www150.statcan.gc.ca/n1/pub/91f0015m/91f0015m2025002-eng.htm
+https://www150.statcan.gc.ca/n1/pub/46-28-0001/2025001/article/00001-eng.htm

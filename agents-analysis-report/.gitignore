@@ -5,3 +5,6 @@ __pycache__/
 venv/
 faiss_index/
 .pytest_cache/
+tests/__pycache__/
+tests/*.pyc
+tests/__init__.py
