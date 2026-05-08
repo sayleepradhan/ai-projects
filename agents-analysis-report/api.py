@@ -1,5 +1,5 @@
 """
-FastAPI backend for the Analysis Report Agent.
+FastAPI backend for the Statistics Canada Analysis Report Agent.
 
 Endpoints:
     GET  /api/health        -- health check
@@ -34,7 +34,7 @@ class ReportRequest(BaseModel):
         min_length=5,
         max_length=500,
         description="The research topic for the analysis report.",
-        examples=["Overview of AI regulation by country"],
+        examples=["Analyze Canada's housing affordability crisis using recent Statistics Canada data"],
     )
 
 
@@ -73,9 +73,9 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="Analysis Report Agent API",
+    title="Statistics Canada Analysis Report Agent API",
     version="1.0.0",
-    description="Generate structured analysis reports using a Plan-and-Execute AI agent.",
+    description="Generate structured analysis reports from Statistics Canada publications using a Plan-and-Execute AI agent.",
     lifespan=lifespan,
 )
 

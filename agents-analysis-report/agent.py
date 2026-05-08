@@ -1,10 +1,14 @@
 """
 Plan-and-Execute Agent for Analysis Report Creation.
 
+Generates structured analysis reports from Statistics Canada publications
+on Canadian housing, demographics, and socioeconomic trends.
+
 The agent operates in three phases:
-  1. PLAN      -- The LLM breaks the user's topic into a sequence of research steps.
-  2. EXECUTE   -- Each step is carried out using the available tools.
-  3. SYNTHESIZE -- The gathered information is compiled into a structured report.
+  1. PLAN      -- Claude breaks the user's topic into research subtasks.
+  2. EXECUTE   -- A LangGraph react agent runs each subtask using tools
+                  (Stats Canada doc retriever, DuckDuckGo, summarizer).
+  3. SYNTHESIZE -- Claude compiles all findings into a structured Markdown report.
 
 This mirrors the Plan-and-Solve prompting approach described in the
 "Building LLMs for Production" textbook, modernized for current LangChain APIs.
@@ -87,15 +91,20 @@ def create_plan(topic: str) -> list[str]:
 # Executor
 # ---------------------------------------------------------------------------
 EXECUTOR_SYSTEM = """\
-You are a research executor. You have access to tools for searching a document 
-store, summarizing text, and searching the web.
+You are a research executor analyzing Statistics Canada publications on
+Canadian housing, demographics, and socioeconomic trends.
+
+You have access to tools for:
+- Searching a document store of ingested Stats Canada articles
+- Summarizing long passages into key points
+- Searching the web via DuckDuckGo for supplementary context
 
 Given a specific research step, use the appropriate tools to gather information 
 and return a concise, factual answer. Always prefer the document retriever first.
 If the retriever returns insufficient results, try the web search tool.
 After gathering raw information, use the summarizer if the text is long.
 
-Be thorough but concise. Cite specific facts when available.
+Be thorough but concise. Cite specific statistics and data points when available.
 """
 
 
