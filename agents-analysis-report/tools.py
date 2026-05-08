@@ -1,9 +1,13 @@
 """
 Tools available to the Plan-and-Execute agent.
 
+The agent analyzes Statistics Canada publications on housing,
+demographics, and socioeconomic trends using three tools:
+
 1. retrieve_docs  -- semantic search over the FAISS vector store
+                     (ingested from Statistics Canada articles)
 2. summarize_text -- condense a long passage into key points
-3. web_search     -- live web search via DuckDuckGo
+3. web_search     -- live web search via DuckDuckGo for supplementary context
 """
 
 from langchain_community.vectorstores import FAISS
@@ -44,8 +48,9 @@ def reset_faiss_db():
 # ---------------------------------------------------------------------------
 @tool
 def retrieve_docs(query: str) -> str:
-    """Search the local document store for passages relevant to the query.
-    Use this when you need factual information from the ingested knowledge base.
+    """Search the ingested Statistics Canada documents for relevant passages.
+    Use this when you need facts, data, or findings from the knowledge base
+    (housing, rent, demographics, construction investment, co-residency).
     Input should be a specific, detailed question."""
     try:
         db = _get_faiss_db()
@@ -91,9 +96,10 @@ def _get_ddg_search() -> DuckDuckGoSearchRun:
 
 @tool
 def web_search(query: str) -> str:
-    """Search the web for current information about a topic using DuckDuckGo.
-    Use this when the local document store does not have enough information,
-    or when you need the latest data on a topic.
+    """Search the web for current information using DuckDuckGo.
+    Use this when the Statistics Canada document store does not have enough
+    information, or when you need supplementary context such as recent policy
+    announcements, comparisons with other countries, or current news.
     Input should be a concise search query."""
     try:
         ddg = _get_ddg_search()
