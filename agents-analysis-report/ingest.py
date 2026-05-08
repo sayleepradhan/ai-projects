@@ -11,7 +11,7 @@ import os
 import time
 
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 import config
@@ -42,7 +42,7 @@ def scrape_articles(url_list: list[str]) -> list[dict]:
             response = session.get(url, headers=headers, timeout=10)
             if response.status_code == 200:
                 article = Article(url)
-                article.download()
+                article.set_html(response.text)  # reuse already-fetched HTML
                 article.parse()
                 if article.text.strip():
                     pages.append({"url": url, "text": article.text})
