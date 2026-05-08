@@ -1,6 +1,5 @@
 """Tests for agent tools."""
 
-import pytest
 from unittest.mock import patch, MagicMock
 
 from tools import retrieve_docs, summarize_text, web_search, reset_faiss_db
