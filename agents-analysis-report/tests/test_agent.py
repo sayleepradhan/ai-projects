@@ -1,9 +1,8 @@
 """Tests for the Plan-and-Execute agent pipeline."""
 
-import pytest
 from unittest.mock import patch, MagicMock
 
-from agent import create_plan, synthesize_report, generate_report, AgentStep, ReportResult
+from agent import create_plan, synthesize_report, generate_report, ReportResult
 
 
 class TestCreatePlan:
